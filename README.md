@@ -27,15 +27,15 @@ On terminal you can use via_cep like this:
 ```ruby
   require 'via_cep'
 
-  cep = ViaCep::CEP.new('01001000')
-  or ViaCep::CEP.new(01001000)
+  address = ViaCep::Address.new('01001-000')
+  address = ViaCep::Address.new(01001000)
 
-  cep.street # Returns "Praça da Sé"
+  address.street # Returns "Praça da Sé"
 ```
 
 ### Available methods
 
-  street, complement, neighborhood, city, state.
+  zipcode, street, complement, neighborhood, city, state, ibge, gia.
 
 ## Development
 

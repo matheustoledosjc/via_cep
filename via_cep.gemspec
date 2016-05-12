@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version       = ViaCep::VERSION
   s.authors       = ["Marcelo Barreto"]
   s.email         = ["marcelobarretojunior@gmail.com"]
-  s.summary       = %q{Get brazillian zip-code information}
+  s.summary       = %q{Brazillian zip-code information}
   s.homepage      = "http://www.github.com/marcelobarreto/via_cep"
   s.license       = "MIT"
 

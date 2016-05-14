@@ -4,11 +4,7 @@ describe ViaCep::Address do
   let(:valid_zipcode)   { ViaCep::Address.new('01001-000') }
   let(:invalid_zipcode) { ViaCep::Address.new('00000') }
 
-  it 'has a version number' do
-    expect(ViaCep::VERSION).not_to be nil
-  end
-
-  context 'with a valid cep' do
+  context 'with a valid zipcode' do
     it 'has a zipcode method' do
       expect(valid_zipcode).to respond_to(:zipcode)
       expect(valid_zipcode.zipcode).to eq('01001-000')

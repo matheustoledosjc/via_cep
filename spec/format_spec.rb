@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ViaCep::Address do
+describe ViaCep::Format do
   context 'with a valid zipcode' do
     it 'does return true' do
       valid_zipcode = '01001-000'
@@ -10,10 +10,10 @@ describe ViaCep::Address do
   end
 
   context 'with an invalid zipcode' do
-    it 'does return false' do
-      invalid_zipcode = '01001-0001'
+    it 'does not return true' do
+      invalid_zipcode = '01001-01001'
       formatter = ViaCep::Format.valid_format?(invalid_zipcode)
-      expect(formatter).to eq(false)
+      expect(formatter).not_to eq(true)
     end
   end
 end

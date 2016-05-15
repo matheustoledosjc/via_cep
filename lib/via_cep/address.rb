@@ -1,15 +1,16 @@
-require_relative 'format'
 require_relative 'methods'
 
 module ViaCep
   class Address
-    include ViaCep::Format
     attr_reader :response
 
     def initialize(zipcode)
-      begin
-        @response = HTTParty.get("https://viacep.com.br/ws/#{zipcode}/json/")
-      raise ArgumentError, 'Invalid zipcode format' unless Format.valid_format?(zipcode)
+      @response = HTTParty.get("https://viacep.com.br/ws/#{zipcode}/json/")
+
+      if !ViaCep::Validators::Zipcode.valid?(zipcode)
+        raise ViaCep::Errors::InvalidZipcodeFormat
+      elsif @response['erro']
+        raise ViaCep::Errors::ZipcodeNotFound
       end
     end
 

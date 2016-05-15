@@ -9,6 +9,7 @@ describe ViaCep::Address do
       expect(valid_zipcode).to respond_to(:zipcode)
       expect(valid_zipcode.zipcode).to eq('01001-000')
     end
+
     it 'has a street method' do
       expect(valid_zipcode).to respond_to(:street)
       expect(valid_zipcode.street).to eq('Praça da Sé')

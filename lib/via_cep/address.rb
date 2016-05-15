@@ -2,8 +2,6 @@ require_relative 'methods'
 
 module ViaCep
   class Address
-    attr_reader :response
-
     def initialize(zipcode)
       @response = HTTParty.get("https://viacep.com.br/ws/#{zipcode}/json/")
 
@@ -16,7 +14,7 @@ module ViaCep
 
     ViaCep::METHODS.each do |method_name, response_method_name|
       define_method(method_name) do
-        response[response_method_name]
+        @response[response_method_name]
       end
     end
   end

@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
+require 'via_cep'
+
+if ARGV.count > 0
+  ARGV.each do |zipcode|
+    address = ViaCep::Address.new(zipcode)
+    puts "#{zipcode}:"
+    puts "  #{address.street}"
+    puts "  #{address.neighborhood}"
+    puts "  #{address.city}"
+    puts "  #{address.state}"
+    puts
+  end
+else
+  puts
+  puts 'How to use'
+  puts '  zipcode 01001-000'
+  puts '  zipcode 01001-000 01406-000'
+  puts
+end

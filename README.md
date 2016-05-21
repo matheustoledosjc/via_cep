@@ -33,6 +33,29 @@ On terminal you can use via_cep like this:
   address.street # Returns "Praça da Sé"
 ```
 
+You can use from terminal either
+
+```bash
+  $ zipcode 01001-000 01406000
+```
+It will return 2 address with its information
+
+```bash
+
+01001-000:
+  Praça da Sé
+  Sé
+  São Paulo
+  SP
+
+01406000:
+  Avenida Nove de Julho
+  Jardim Paulista
+  São Paulo
+  SP
+```
+
+
 ### Available methods
 
   zipcode, street, complement, neighborhood, city, state, ibge, gia.

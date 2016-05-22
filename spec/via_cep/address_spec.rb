@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe ViaCep::Address do
   let(:valid_zipcode)   { ViaCep::Address.new('01001-000') }
-  let(:invalid_zipcode) { ViaCep::Address.new('00000') }
 
   context 'with a valid zipcode' do
     it 'has a zipcode method' do

@@ -7,15 +7,19 @@ module ViaCep
       street = ViaCep::Utils.parameterize(street)
 
       if state.size != 2
-        raise ArgumentError, 'State must have only abbreviations. Eg.: SP'
+        raise ViaCep::Errors::InvalidStateFormat
       end
 
-      @response = HTTParty.get("#{base_url}/#{state}/#{city}/#{street}/json").first
+      @response = HTTParty.get("#{base_url}/#{state}/#{city}/#{street}/json")
+
+      if @response.include?('Bad Request')
+        raise ViaCep::Errors::ZipcodeNotFound
+      end
     end
 
     ViaCep::METHODS.each do |method_name, response_method_name|
       define_method(method_name) do
-        @response[response_method_name]
+        @response.first[response_method_name]
       end
     end
 

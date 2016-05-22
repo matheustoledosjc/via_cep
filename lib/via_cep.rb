@@ -11,6 +11,7 @@ require 'via_cep/validators/zipcode'
 
 # Errors
 require 'via_cep/errors/invalid_zipcode_format'
+require 'via_cep/errors/invalid_state_format'
 require 'via_cep/errors/zipcode_not_found'
 
 # Utils

@@ -55,6 +55,13 @@ It will return 2 address with its information
   SP
 ```
 
+And also search for a zipcode by an address
+
+```ruby
+search = ViaCep::SearchByAddress.new(state: 'SP', city: 'São Paulo', street: 'Praça da Sé')
+
+search.zipcode # => "01001-000"
+```
 
 ### Available methods
 

@@ -6,9 +6,7 @@ module ViaCep
       city   = ViaCep::Utils.parameterize(city)
       street = ViaCep::Utils.parameterize(street)
 
-      if ViaCep::Validators::State.valid?(state)
-        raise ViaCep::Errors::InvalidStateFormat
-      end
+      raise ViaCep::Errors::InvalidStateFormat unless ViaCep::Validators::State.valid?(state)
 
       @response = HTTParty.get("#{base_url}/#{state}/#{city}/#{street}/json")
 

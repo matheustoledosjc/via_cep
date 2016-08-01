@@ -6,7 +6,7 @@ module ViaCep
       city   = ViaCep::Utils.parameterize(city)
       street = ViaCep::Utils.parameterize(street)
 
-      if state.size != 2
+      if ViaCep::Validators::State.valid?(state)
         raise ViaCep::Errors::InvalidStateFormat
       end
 

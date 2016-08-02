@@ -8,6 +8,7 @@ require 'via_cep/search_by_zipcode'
 
 # Validators
 require 'via_cep/validators/zipcode'
+require 'via_cep/validators/state'
 
 # Errors
 require 'via_cep/errors/invalid_zipcode_format'

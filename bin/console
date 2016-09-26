@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
+# frozen_string_literal: true
+# encoding: utf-8
 
-require "bundler/setup"
-require "via_cep"
+require 'bundler/setup'
+require 'via_cep'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -10,5 +13,5 @@ require "via_cep"
 # require "pry"
 # Pry.start
 
-require "irb"
+require 'irb'
 IRB.start

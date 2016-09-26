@@ -1,9 +1,13 @@
+# encoding: utf-8
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe ViaCep::SearchByAddress do
-  let(:valid_address_search) { ViaCep::SearchByAddress.new(state: 'SP',
-                                                           city: 'São Paulo',
-                                                           street: 'Praça da Sé') }
+  let(:valid_address_search) do
+    ViaCep::SearchByAddress.new(state: 'SP',
+                                city: 'São Paulo',
+                                street: 'Praça da Sé')
+  end
 
   context 'with a valid zipcode' do
     it 'has a zipcode method' do

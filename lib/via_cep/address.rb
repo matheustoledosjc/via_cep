@@ -1,15 +1,16 @@
+# encoding: utf-8
+# frozen_string_literal: true
 require_relative 'methods'
 
 module ViaCep
+  # Address class
   class Address
     def initialize(zipcode)
       @response = HTTParty.get("https://viacep.com.br/ws/#{zipcode}/json/")
 
-      if !ViaCep::Validators::Zipcode.valid?(zipcode)
-        raise ViaCep::Errors::InvalidZipcodeFormat
-      elsif @response['erro']
-        raise ViaCep::Errors::ZipcodeNotFound
-      end
+      raise ViaCep::Errors::ZipcodeNotFound if @response['erro']
+      raise ViaCep::Errors::InvalidZipcodeFormat unless ViaCep::Validators::
+                                                        Zipcode.valid?(zipcode)
     end
 
     ViaCep::METHODS.each do |method_name, response_method_name|

@@ -1,11 +1,14 @@
+# encoding: utf-8
+# frozen_string_literal: true
 module ViaCep
   module Validators
+    # Zipcode validator
     module Zipcode
       class << self
         def valid?(zipcode)
           zipcode = zipcode.to_s
 
-          return true if self.match_regex?(zipcode)
+          return true if match_regex?(zipcode)
         end
 
         def match_regex?(zipcode)

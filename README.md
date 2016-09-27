@@ -1,7 +1,7 @@
 # ViaCep
 
 ## Status
-[![Build Status](https://api.travis-ci.org/marcelobarreto/via_cep.svg?branch=master)](https://travis-ci.org/marcelobarreto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep.svg)](https://codeclimate.com/github/marcelobareto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep/coverage.svg)](https://codeclimate.com/github/marcelobarreto/via_cep)
+[![Build Status](https://api.travis-ci.org/marcelobarreto/via_cep.svg?branch=master)](https://travis-ci.org/marcelobarreto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep.svg)](https://codeclimate.com/github/marcelobareto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep/coverage.svg)](https://codeclimate.com/github/marcelobarreto/via_cep) [![Ebert](https://ebertapp.io/badges/N68FgrgxUFWYFU43eLvEK4qb.svg)](https://ebertapp.io/repos/85)
 
 ## Installation
 

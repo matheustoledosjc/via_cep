@@ -14,7 +14,7 @@ module ViaCep
 
       @response = HTTParty.get("#{base_url}/#{state}/#{city}/#{street}/json")
 
-      raise ViaCep::Errors::ZipcodeNotFound if @response.include?('Bad Request')
+      raise ViaCep::Errors::AddressNotFound if @response.include?('Bad Request')
     end
 
     ViaCep::METHODS.each do |method_name, response_method_name|

@@ -22,8 +22,5 @@ Gem::Specification.new do |s|
   s.executables   = ['zipcode']
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'rspec', '~> 3.5'
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.6'
-  s.add_development_dependency 'rubocop', '~> 0.49.0'
   s.add_dependency 'activesupport', '~> 5.0'
 end

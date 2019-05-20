@@ -1,5 +1,6 @@
 # coding: utf-8
 # frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'via_cep/version'
@@ -7,7 +8,7 @@ require 'via_cep/version'
 Gem::Specification.new do |s|
   s.name          = 'via_cep'
   s.version       = ViaCep::VERSION
-  s.authors       = ['Marcelo Barreto']
+  s.authors       = ['Marcelo Barreto (@marcelobarreto)']
   s.email         = ['marcelobarretojunior@gmail.com']
   s.summary       = 'Brazillian zip-code information'
   s.homepage      = 'http://www.github.com/marcelobarreto/via_cep'
@@ -21,12 +22,8 @@ Gem::Specification.new do |s|
   s.executables   = ['zipcode']
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'bundler', '~> 1.13'
-  s.add_development_dependency 'rake', '~> 11.2'
   s.add_development_dependency 'rspec', '~> 3.5'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 0.6'
   s.add_development_dependency 'rubocop', '~> 0.49.0'
-  s.add_dependency 'httparty', '~> 0.14'
   s.add_dependency 'activesupport', '~> 5.0'
-  s.add_dependency 'i18n', '~> 0.7'
 end

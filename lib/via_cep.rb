@@ -1,7 +1,10 @@
 # encoding: utf-8
 # frozen_string_literal: true
-require 'httparty'
+
 require 'via_cep/version'
+require 'net/http'
+require 'uri'
+require 'json'
 
 # Core
 require 'via_cep/address'
@@ -20,3 +23,5 @@ require 'via_cep/errors/address_not_found'
 
 # Utils
 require 'via_cep/utils/utils'
+
+BASE_URL = 'https://viacep.com.br/ws'.freeze

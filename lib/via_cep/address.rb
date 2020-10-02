@@ -13,7 +13,7 @@ module ViaCep
       raise ViaCep::Errors::InvalidZipcodeFormat unless ViaCep::Validators::
                                                         Zipcode.valid?(zipcode)
 
-      if request.code === '200'
+      if request.code.eql?('200')
         @response = JSON.parse(request.body)
 
         raise ViaCep::Errors::ZipcodeNotFound if @response['erro']

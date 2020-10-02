@@ -67,7 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   codeclimate-test-reporter (~> 0.6)
-  rake
+  rake (~> 13.0.1)
   rspec (~> 3.5)
   rubocop (~> 0.86.0)
   via_cep!

@@ -1,4 +1,3 @@
-# encoding: utf-8
 # frozen_string_literal: true
 
 require 'via_cep/version'
@@ -24,4 +23,4 @@ require 'via_cep/errors/address_not_found'
 # Utils
 require 'via_cep/utils/utils'
 
-BASE_URL = 'https://viacep.com.br/ws'.freeze
+BASE_URL = 'https://viacep.com.br/ws'

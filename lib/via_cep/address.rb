@@ -1,28 +1,29 @@
 # frozen_string_literal: true
 
-require_relative 'methods'
-
 module ViaCep
   # Address class
-  class Address
+  class Address < Instance
+    attr_reader :zipcode
+
     def initialize(zipcode)
-      uri = URI("#{BASE_URL}/#{zipcode}/json/")
-      request = Net::HTTP.get_response(uri)
-
-      raise ViaCep::Errors::InvalidZipcodeFormat unless ViaCep::Validators::
-                                                        Zipcode.valid?(zipcode)
-
-      if request.code.eql?('200')
-        @response = JSON.parse(request.body)
-
-        raise ViaCep::Errors::ZipcodeNotFound if @response['erro']
-      end
+      @zipcode = zipcode
+      valid?
+      call_service
+    rescue JSON::ParserError, Net::HTTPBadRequest
+      raise ViaCep::Errors::ZipcodeNotFound
     end
 
-    ViaCep::METHODS.each do |method_name, response_method_name|
-      define_method(method_name) do
-        @response[response_method_name]
-      end
+    private
+
+    def call_service
+      response = JSON.parse(ViaCep::HTTP.get(path: zipcode).body)
+      raise ViaCep::Errors::ZipcodeNotFound if response['erro']
+
+      define_attributes(response)
+    end
+
+    def valid?
+      raise ViaCep::Errors::InvalidZipcodeFormat unless ViaCep::Validators::Zipcode.valid?(zipcode)
     end
   end
 end

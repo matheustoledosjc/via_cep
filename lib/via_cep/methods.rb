@@ -3,13 +3,14 @@
 module ViaCep
   # Translate methods allows us to use metaprogramming.
   METHODS = {
-    zipcode: 'cep',
-    street: 'logradouro',
-    complement: 'complemento',
-    neighborhood: 'bairro',
-    city: 'localidade',
-    state: 'uf',
-    ibge: 'ibge',
-    gia: 'gia'
+    zipcode: :cep,
+    street: :logradouro,
+    complement: :complemento,
+    neighborhood: :bairro,
+    city: :localidade,
+    state: :uf,
+    ibge: :ibge,
+    gia: :gia,
+    error: :erro
   }.freeze
 end

@@ -4,20 +4,25 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'via_cep/version'
 
-Gem::Specification.new do |s|
-  s.name          = 'via_cep'
-  s.version       = ViaCep::VERSION
-  s.authors       = ['Marcelo Barreto (@marcelobarreto)']
-  s.email         = ['marcelobarretojunior@gmail.com']
-  s.summary       = 'Brazillian zip-code information'
-  s.homepage      = 'http://www.github.com/marcelobarreto/via_cep'
-  s.license       = 'MIT'
+Gem::Specification.new do |spec|
+  spec.name          = 'via_cep'
+  spec.version       = ViaCep::VERSION
+  spec.authors       = ['Marcelo Barreto (@marcelobarreto)']
+  spec.email         = ['marcelobarretojunior@gmail.com']
+  spec.summary       = 'Brazillian zip-code information'
+  spec.homepage      = 'http://www.github.com/marcelobarreto/via_cep'
+  spec.license       = 'MIT'
 
-  s.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
 
-  s.bindir        = 'bin'
-  s.executables   = ['zipcode']
-  s.require_paths = ['lib']
+  spec.bindir        = 'bin'
+  spec.executables   = ['zipcode']
+  spec.require_paths = ['lib']
+
+  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.6'
+  spec.add_development_dependency 'rake', '~> 13.0.1'
+  spec.add_development_dependency 'rspec', '~> 3.5'
+  spec.add_development_dependency 'rubocop', '~> 0.92.0'
 end

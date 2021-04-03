@@ -2,12 +2,12 @@
 
 module ViaCep
   # Address class
-  class Address
+  class Address < Instance
     attr_reader :zipcode
 
     def initialize(zipcode)
       @zipcode = zipcode
-      is_zipcode_valid?
+      is_valid?
       call_service
     rescue JSON::ParserError, Net::HTTPBadRequest
       raise ViaCep::Errors::ZipcodeNotFound
@@ -21,18 +21,7 @@ module ViaCep
       define_attributes(response)
     end
 
-    def define_attributes(response)
-      ViaCep::METHODS.each do |method_name, response_key|
-        value = response[response_key.to_s]
-
-        instance_variable_set("@#{method_name}", value)
-        self.class.define_method(method_name) do
-          instance_variable_get("@#{method_name}")
-        end
-      end
-    end
-
-    def is_zipcode_valid?
+    def is_valid?
       unless ViaCep::Validators::Zipcode.valid?(zipcode)
         raise ViaCep::Errors::InvalidZipcodeFormat
       end

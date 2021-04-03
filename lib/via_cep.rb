@@ -6,14 +6,14 @@ require 'uri'
 require 'json'
 
 # Validators
-require 'via_cep/validators/zipcode'
-require 'via_cep/validators/state'
+require 'via_cep/validators'
 
 # HTTP
 require 'via_cep/http'
 
 # Core
 require 'via_cep/methods'
+require 'via_cep/instance'
 require 'via_cep/address'
 require 'via_cep/search_by_address'
 
@@ -24,6 +24,7 @@ module ViaCep
     class ZipcodeNotFound < StandardError; end
     class InvalidZipcodeFormat < StandardError; end
     class InvalidStateFormat < StandardError; end
+    class InvalidAddressFormat < StandardError; end
     class AddressNotFound < StandardError; end
   end
 end

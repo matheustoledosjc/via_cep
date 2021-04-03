@@ -1,7 +1,10 @@
-engines:
+version: "2"
+plugins:
   rubocop:
     enabled: true
-ratings:
-  paths:
-  - Gemfile.lock
-  - "**.rb"
+    channel: rubocop-0-60
+    config:
+      file: ".rubocop.yml"
+exclude_patterns:
+  - "spec/"
+  - "!spec/support/helpers"

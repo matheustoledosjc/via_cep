@@ -22,9 +22,13 @@ module ViaCep
 
   module Errors
     class ZipcodeNotFound < StandardError; end
+
     class InvalidZipcodeFormat < StandardError; end
+
     class InvalidStateFormat < StandardError; end
+
     class InvalidAddressFormat < StandardError; end
+
     class AddressNotFound < StandardError; end
   end
 end

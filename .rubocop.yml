@@ -1,2 +1,12 @@
 AllCops:
-  TargetRubyVersion: 2.6
+  SuggestExtensions: false
+  Exclude:
+    - 'spec/**/*.rb'
+Style/Documentation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Lint/MissingSuper:
+  Enabled: false
+Lint/UriEscapeUnescap:
+  Enabled: false

@@ -7,7 +7,7 @@ module ViaCep
 
     def initialize(zipcode)
       @zipcode = zipcode
-      is_valid?
+      valid?
       call_service
     rescue JSON::ParserError, Net::HTTPBadRequest
       raise ViaCep::Errors::ZipcodeNotFound
@@ -18,13 +18,12 @@ module ViaCep
     def call_service
       response = JSON.parse(ViaCep::HTTP.get(path: zipcode).body)
       raise ViaCep::Errors::ZipcodeNotFound if response['erro']
+
       define_attributes(response)
     end
 
-    def is_valid?
-      unless ViaCep::Validators::Zipcode.valid?(zipcode)
-        raise ViaCep::Errors::InvalidZipcodeFormat
-      end
+    def valid?
+      raise ViaCep::Errors::InvalidZipcodeFormat unless ViaCep::Validators::Zipcode.valid?(zipcode)
     end
   end
 end

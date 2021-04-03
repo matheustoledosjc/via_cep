@@ -11,7 +11,7 @@ module ViaCep
     end
 
     def self.was_successful?(request)
-      request.code === '200'
+      request.code.eql?('200')
     end
   end
 end

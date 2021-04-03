@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ViaCep
   class Instance
     def define_attributes(response)

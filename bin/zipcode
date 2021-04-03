@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + '/../lib'))
+$LOAD_PATH.unshift(File.expand_path("#{File.dirname(__FILE__)}/../lib"))
 require 'via_cep'
 
-if ARGV.count > 0
+if ARGV.count.positive?
   ARGV.each do |zipcode|
     address = ViaCep::Address.new(zipcode)
     puts "#{zipcode}:"

@@ -20,7 +20,7 @@ module ViaCep
       class << self
         def valid?(zipcode)
           zipcode = zipcode.to_s
-          zipcode.match(/^[0-9]{5}(-)[0-9]{3}$/) || zipcode.match(/^[0-9]{8}$/)
+          !!zipcode.match(/^[0-9]{5}(-)[0-9]{3}$/) || !!zipcode.match(/^[0-9]{8}$/)
         end
       end
     end

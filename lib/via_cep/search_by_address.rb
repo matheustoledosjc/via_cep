@@ -10,7 +10,7 @@ module ViaCep
       @city = city
       @street = street
 
-      is_valid?
+      valid?
       call_service
     rescue JSON::ParserError, Net::HTTPBadRequest
       raise ViaCep::Errors::AddressNotFound
@@ -18,17 +18,17 @@ module ViaCep
 
     private
 
-    def is_valid?
+    def valid?
       raise ViaCep::Errors::InvalidStateFormat unless ViaCep::Validators::State.valid?(state)
       raise ViaCep::Errors::InvalidAddressFormat unless city || state
     end
 
     def call_service
       request = HTTP.get(path: "#{state}/#{city}/#{street}")
-      raise ViaCep::Errors::AddressNotFound if request.code != '200'
+      raise ViaCep::Errors::AddressNotFound unless HTTP.was_successful?(request)
 
       response = JSON.parse(request.body)
-      raise ViaCep::Errors::AddressNotFound if response.length === 0
+      raise ViaCep::Errors::AddressNotFound if response.length.eql?(0)
 
       define_attributes(response[0])
     end

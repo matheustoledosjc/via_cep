@@ -7,6 +7,7 @@ require 'via_cep/version'
 Gem::Specification.new do |spec|
   spec.name          = 'via_cep'
   spec.version       = ViaCep::VERSION
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.6')
   spec.authors       = ['Marcelo Barreto (@marcelobarreto)']
   spec.email         = ['marcelobarretojunior@gmail.com']
   spec.summary       = 'Brazillian zip-code information'

@@ -15,11 +15,11 @@ gem 'via_cep'
 
 And then execute:
 
-$ bundle
+```$ bundle```
 
 Or install it yourself as:
 
-$ gem install via_cep
+```$ gem install via_cep```
 
 ## Usage
 

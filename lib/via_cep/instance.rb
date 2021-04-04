@@ -2,6 +2,11 @@
 
 module ViaCep
   class Instance
+    #
+    # Default class to define methods based on the response
+    #
+    # return [ViaCep::Instance]
+    #
     def define_attributes(response)
       ViaCep::METHODS.each do |method_name, response_key|
         value = response[response_key.to_s]

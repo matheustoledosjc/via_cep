@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 module ViaCep
-  # Translate methods allows us to use metaprogramming.
+  #
+  # Constant with the params mapped
+  #
+  # return Hash
+  #
   METHODS = {
     zipcode: :cep,
     street: :logradouro,
@@ -11,6 +15,8 @@ module ViaCep
     state: :uf,
     ibge: :ibge,
     gia: :gia,
-    error: :erro
+    error: :erro,
+    ddd: :ddd,
+    siafi: :siafi
   }.freeze
 end

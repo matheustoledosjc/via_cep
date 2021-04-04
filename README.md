@@ -1,6 +1,7 @@
 # ViaCep
 
 ## Status
+
 [![Build Status](https://api.travis-ci.org/marcelobarreto/via_cep.svg?branch=master)](https://travis-ci.org/marcelobarreto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep.svg)](https://codeclimate.com/github/marcelobareto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep/coverage.svg)](https://codeclimate.com/github/marcelobarreto/via_cep)[![RubyGems](http://img.shields.io/gem/dt/via_cep.svg?style=flat)](http://rubygems.org/gems/via_cep)
 
 
@@ -14,28 +15,29 @@ gem 'via_cep'
 
 And then execute:
 
-    $ bundle
+$ bundle
 
 Or install it yourself as:
 
-    $ gem install via_cep
+$ gem install via_cep
 
 ## Usage
 
 On terminal you can use via_cep like this:
+
 ```ruby
-  require 'via_cep'
+require 'via_cep'
 
-  address = ViaCep::Address.new('01001-000')
-  address = ViaCep::Address.new(01001000)
+address = ViaCep::Address.new('01001-000')
+address = ViaCep::Address.new(01001000)
 
-  address.street # Returns "Praça da Sé"
+address.street # Returns "Praça da Sé"
 ```
 
 You can use from terminal either
 
 ```bash
-  $ zipcode 01001-000 01406000
+$ zipcode 01001-000 01406000
 ```
 It will return 2 address with its information
 
@@ -64,7 +66,7 @@ search.zipcode # => "01001-000"
 
 ### Available methods
 
-  zipcode, street, complement, neighborhood, city, state, ibge, gia.
+zipcode, street, complement, neighborhood, city, state, ibge, gia.
 
 ## Development
 

@@ -2,7 +2,11 @@
 
 ## Status
 
-[![Build Status](https://api.travis-ci.org/marcelobarreto/via_cep.svg?branch=master)](https://travis-ci.org/marcelobarreto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep.svg)](https://codeclimate.com/github/marcelobareto/via_cep) [![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep/coverage.svg)](https://codeclimate.com/github/marcelobarreto/via_cep)[![RubyGems](http://img.shields.io/gem/dt/via_cep.svg?style=flat)](http://rubygems.org/gems/via_cep)
+[![Build Status](https://api.travis-ci.org/marcelobarreto/via_cep.svg?branch=master)](https://travis-ci.org/marcelobarreto/via_cep)
+[![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep.svg)](https://codeclimate.com/github/marcelobareto/via_cep)
+[![Code Climate](https://codeclimate.com/github/marcelobarreto/via_cep/coverage.svg)](https://codeclimate.com/github/marcelobarreto/via_cep)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+[![RubyGems](http://img.shields.io/gem/dt/via_cep.svg?style=flat)](http://rubygems.org/gems/via_cep)
 
 
 ## Installation
